@@ -79,6 +79,41 @@
         >
           <div id="CartDrawer-CartItems" class="drawer__contents js-contents">
             {%- if cart != empty -%}
+              {% comment %}Niv Added 23.4.2023{% endcomment %}
+              <p class="cart-attribute__field">
+                <label>Select case</label><br>
+                <select required class="required" id="select-case" name="attributes[Select case]">
+                  <option
+                    value="Case Id 1"
+                    data-payment-option="lifetime"
+                    {% if cart.attributes['Select case'] == 'Case Id 1' %}
+                      selected
+                    {% endif %}
+                  >
+                    Case Id 1
+                  </option>
+                  <option
+                    value="Case Id 2"
+                    data-payment-option="pay_per_order"
+                    {% if cart.attributes['Select case'] == 'Case Id 2' %}
+                      selected
+                    {% endif %}
+                  >
+                    Case Id 2
+                  </option>
+                  <option
+                    value="Case Id 3"
+                    data-payment-option="pay_per_order"
+                    {% if cart.attributes['Select case'] == 'Case Id 3' %}
+                      selected
+                    {% endif %}
+                  >
+                    Case Id 3
+                  </option>
+                </select>
+              </p>
+              {% comment %}End Niv Added 23.4.2023{% endcomment %}
+
               <div class="drawer__cart-items-wrapper">
                 <table class="cart-items" role="table">
                   <thead role="rowgroup">
