@@ -47,6 +47,40 @@
     <div class="cart__items" id="main-cart-items" data-id="{{ section.id }}">
       <div class="js-contents">
         {%- if cart != empty -%}
+          {% comment %}Niv Added 23.4.2023{% endcomment %}
+          <p class="cart-attribute__field">
+            <label>Select case</label><br>
+            <select required class="required" id="select-case" name="attributes[Select case]">
+              <option
+                value="Case Id 1"
+                data-payment-option="lifetime"
+                {% if cart.attributes['Select case'] == 'Case Id 1' %}
+                  selected
+                {% endif %}
+              >
+                Case Id 1
+              </option>
+              <option
+                value="Case Id 2"
+                data-payment-option="pay_per_order"
+                {% if cart.attributes['Select case'] == 'Case Id 2' %}
+                  selected
+                {% endif %}
+              >
+                Case Id 2
+              </option>
+              <option
+                value="Case Id 3"
+                data-payment-option="pay_per_order"
+                {% if cart.attributes['Select case'] == 'Case Id 3' %}
+                  selected
+                {% endif %}
+              >
+                Case Id 3
+              </option>
+            </select>
+          </p>
+          {% comment %}End Niv Added 23.4.2023{% endcomment %}
           <table class="cart-items">
             <caption class="visually-hidden">
               {{ 'sections.cart.title' | t }}
